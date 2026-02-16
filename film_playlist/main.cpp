@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <limits>
 #include "FilmPlaylist.h"
 using namespace std;
 
@@ -30,8 +29,8 @@ public:
 	FilmMetadata get_film_metadata() {
 	    string name, producer;
 	    int duration;
-
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // <-- fix input issue
+	    
+        cin.ignore();
 	
 	    cout << "Enter film title: ";
 	    getline(cin, name);
@@ -41,7 +40,6 @@ public:
 	
 	    cout << "Enter duration (seconds): ";
 	    cin >> duration;
-	    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // <-- flush newline
 	
 	    return FilmMetadata(name, producer, duration);
 	}
@@ -75,11 +73,11 @@ public:
             // Check if input failed
             if (cin.fail()) {
 		        cin.clear(); // clear error flag
-		        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // flush bad input
+		        cin.ignore();
 		        cout << "Invalid input. Please enter a number in range [1, 5].\n";
 		        continue;    // restart loop
 		    }
-            
+
             // Exit condition
             if (user_choice == 5) break;
             

@@ -20,13 +20,13 @@ private:
     Node<T>* head; // The head of Linked List
     Node<T>* tail; // The taif of Linked List
     /*
-		The set is used to control the uniqueness of songs in the playlist, avoid duplicating songs.
+		The set is used to control the uniqueness of films in the playlist, avoid duplicating films.
 		- set.count() operates in O(log n) time complexity.
 		- set.erase() operates in O(log n) time complexity.
 	*/
     set<int> film_list;
 
-	string trim(const string& s) {
+	string trim(string s) {
 	    size_t start = s.find_first_not_of(" \t\n\r");
 	    size_t end = s.find_last_not_of(" \t\n\r");
 	
@@ -44,7 +44,7 @@ private:
     	return result;
 	}
 	
-	bool check_film(const T& value, bool save_id) {
+	bool check_film(T value, bool save_id) {
 		// Create an unique id
 	    string id = trim(value.name) + '|' 
 	              + trim(value.producer) + '|' 
@@ -107,13 +107,13 @@ public:
                     current->next->prev = current->prev;
 
                 delete current;
-                cout << "Song removed successfully.\n";
+                cout << "Film removed successfully.\n";
                 return;
             }
             current = current->next;
         }
 
-        cout << "Song not found.\n";
+        cout << "Film not found.\n";
     }
 
     // Display the film playlist forward

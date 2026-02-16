@@ -17,10 +17,10 @@ public:
     string producer;
     int duration;
 
-	// Instantiating a Song object with no arguments
+	// Instantiating a FilmMetadata object with no arguments
     FilmMetadata() {}
 
-	// Instantiating a Song object with arguments
+	// Instantiating a FilmMetadata object with arguments
     FilmMetadata(string name, string producer, int duration) {
 	    this->name     = name;
 	    this->producer = producer;
