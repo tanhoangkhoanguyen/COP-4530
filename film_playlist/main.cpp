@@ -23,7 +23,7 @@ public:
         cout << "Option 3. Display Playlist Forward\n";
         cout << "Option 4. Display Playlist Backward\n";
         cout << "Option 5. Exit\n";
-        cout << "Please enter choice.. ";
+        cout << "Please enter your choice.. ";
     }
 
 	FilmMetadata get_film_metadata() {
