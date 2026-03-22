@@ -34,7 +34,7 @@ private:
 	        return "";
 	
 	    return s.substr(start, end - start + 1);
-	}	
+	}
 
 	// String Hasing algorithm to control the uniqueness
     int hash_str(string s) {
